@@ -1,33 +1,12 @@
-body {
-    background-color: #1D4221;
-    color: white;
-    font-family: "Bai Jamjuree", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 700px;
-    margin: 0;
-}
 
-button {
-    background-color: #64A712;
-    color: white;
-    font-family: "Bai Jamjuree", sans-serif;
-}
+const avanca = document.querySelectorAll('.btn-proximo');
 
-.passo {
-    display: none;
-}
+avanca.forEach(button => {
+    button.addEventListener('click', function(){
+        const atual = document.querySelector('.ativo');
+        const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
 
-.passo.ativo {
-    display:block;
-}
-
-main {
-    text-align: center;
-    max-width: 90%;
-}
-
-img {
-    max-width: 90%;
-}A
+        atual.classList.remove('ativo');
+        document.getElementById(proximoPasso).classList.add('ativo');
+    })
+})
